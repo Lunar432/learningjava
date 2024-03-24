@@ -28,17 +28,15 @@ public class VehicleManagement {
         // search implementation
         System.out.println("Enter vehicle ID to search for " + u[0].getUserName() + ":");
         int vId0 = inp.nextInt();
-        for (int i = 0; i < v.length; i++) {
-            if (u[0].searchVehicle(vId0)!= null && u[0].searchVehicle(vId0)==v[i]) {
-                v[i].display();
-            }
+        if (u[0].searchVehicle(vId0)!=null){
+        Vehicle matchedVehicle = searchVehicle(vId0);
+        matchedVehicle.display();
         }
         System.out.println("Enter vehicle ID to search for " + u[1].getUserName() + ":");
         int vId1 = inp.nextInt();
-        for (int i = 0; i < v.length; i++) {
-            if (u[1].searchVehicle(vId0)!= null && u[1].searchVehicle(vId1) == v[i]) {
-                v[i].display();
-            }
+        if (u[1].searchVehicle(vId0)!= null) {
+        Vehicle matchedVehicle = searchVehicle(vId1);
+        matchedVehicle.display();
         }
         //print list of vehicles of each user
         System.out.println("List of vehicles of "+u[0].getUserName());
